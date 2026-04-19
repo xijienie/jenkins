@@ -1,0 +1,14 @@
+.git
+.idea
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache
+.mypy_cache
+.DS_Store
+config/server-load.env
+config/server-load.docker.env
+config/servers.json
+secrets
