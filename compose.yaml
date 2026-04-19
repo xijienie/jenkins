@@ -1,0 +1,20 @@
+services:
+  cvm-load-panel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PIP_INDEX_URL: ${PIP_INDEX_URL:-https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple}
+        PIP_TRUSTED_HOST: ${PIP_TRUSTED_HOST:-mirrors.tuna.tsinghua.edu.cn}
+    image: cvm-load-panel:latest
+    container_name: cvm-load-panel
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./config/server-load.docker.env
+    environment:
+      SERVER_CONFIG_PATH: /app/config/servers.json
+    volumes:
+      - ./config/servers.json:/app/config/servers.json:ro
+      - ./secrets:/run/secrets:ro
