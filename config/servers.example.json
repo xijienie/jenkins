@@ -1,0 +1,16 @@
+[
+  {
+    "name": "devc",
+    "instance_id": "ins-xxxxxxxx",
+    "cpu_cores": 4,
+    "group": "dev",
+    "ssh_host": "172.16.16.11"
+  },
+  {
+    "name": "devk",
+    "instance_id": "ins-yyyyyyyy",
+    "cpu_cores": 8,
+    "group": "test",
+    "ssh_host": "172.16.16.12"
+  }
+]
